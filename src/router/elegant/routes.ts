@@ -74,5 +74,25 @@ export const generatedRoutes: GeneratedRoute[] = [
       constant: true,
       hideInMenu: true
     }
+  },
+  {
+    name: 'zcbf',
+    path: '/zcbf',
+    component: 'layout.base',
+    meta: {
+      title: 'zcbf',
+      i18nKey: 'route.zcbf'
+    },
+    children: [
+      {
+        name: 'zcbf_apply',
+        path: '/zcbf/apply',
+        component: 'view.zcbf_apply',
+        meta: {
+          title: 'zcbf_apply',
+          i18nKey: 'route.zcbf_apply'
+        }
+      }
+    ]
   }
 ];
