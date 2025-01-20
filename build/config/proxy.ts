@@ -15,7 +15,6 @@ export function createViteProxy(env: Env.ImportMeta, enable: boolean) {
   const { baseURL, proxyPattern, other } = createServiceConfig(env);
 
   const proxy: Record<string, ProxyOptions> = createProxyItem({ baseURL, proxyPattern });
-
   other.forEach(item => {
     Object.assign(proxy, createProxyItem(item));
   });
