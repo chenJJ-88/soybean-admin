@@ -2,7 +2,7 @@ import type { AxiosResponse } from 'axios';
 import { BACKEND_ERROR_CODE, createFlatRequest, createRequest } from '@sa/axios';
 import { useAuthStore } from '@/store/modules/auth';
 import { $t } from '@/locales';
-import { localStg } from '@/utils/storage';
+// import { localStg } from '@/utils/storage';
 import { getServiceBaseURL } from '@/utils/service';
 import { getAuthorization, handleExpiredRequest, showErrorMsg } from './shared';
 import type { RequestInstanceState } from './type';
@@ -125,15 +125,18 @@ export const request = createFlatRequest<App.Service.Response, RequestInstanceSt
 
 export const demoRequest = createRequest<App.Service.DemoResponse>(
   {
-    baseURL: otherBaseURL.demo
+    baseURL: `${otherBaseURL.demo}/api/gateway`
   },
   {
     async onRequest(config) {
       const { headers } = config;
 
       // set token
-      const token = localStg.get('token');
-      const Authorization = token ? `Bearer ${token}` : null;
+      // const token = localStg.get('token');
+      // const Authorization = token ? `Bearer ${token}` : null;
+
+      const Authorization = null;
+
       Object.assign(headers, { Authorization });
 
       return config;

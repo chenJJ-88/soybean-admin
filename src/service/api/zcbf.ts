@@ -5,7 +5,7 @@ export function getApplyList(page: number, pageSize: number, rest: any) {
     method: 'POST',
     data: {
       page,
-      pageSize,
+      size: pageSize,
       ...rest
     }
   });

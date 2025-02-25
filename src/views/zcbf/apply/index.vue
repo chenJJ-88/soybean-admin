@@ -182,19 +182,12 @@ onMounted(() => {
       </NCollapseItem>
     </NCollapse>
   </NCard>
-  <!-- <div class="m-4 rounded-2xl bg-white"> -->
-
-  <!-- </div> -->
   <NCard class="m-4">
     <NSpace justify="space-between">
       <AssetOperations></AssetOperations>
     </NSpace>
     <NDataTable scroll-x="1000" :columns :data :bordered="true" :pagination />
   </NCard>
-  <!--
- <div class="m-4 rounded-2xl bg-white">
-
-  </div>
---></template>
+</template>
 
 <style scoped></style>

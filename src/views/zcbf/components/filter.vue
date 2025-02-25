@@ -27,7 +27,7 @@ const model = reactive({
   scenario: '',
   status: '',
   createUser: '',
-  submitTime: '',
+  submitTime: null,
   orderNumber: ''
 });
 const search = async () => {
@@ -70,7 +70,7 @@ defineOptions({
         <NInput v-model:value="model.createUser" />
       </NFormItemGi>
       <NFormItemGi span="24 s:12 m:8" label="提单时间" path="submitTime" class="pr-24px">
-        <NDatePicker type="datetimerange" clearable />
+        <NDatePicker v-model:value="model.submitTime" type="daterange" clearable />
       </NFormItemGi>
       <NFormItemGi span="24 s:12 m:8" label="报废清单编号" path="orderNumber" class="pr-24px">
         <NInput v-model:value="model.orderNumber" clearable />
